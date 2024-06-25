@@ -19,5 +19,8 @@
     "styles": [
       "styles/creature-builder.css"
     ],
-    "system": ["pf2e"]
+    "system": ["pf2e"],
+    "url": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder",
+    "manifest": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder/raw/main/module.json",
+    "download": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder/archive/refs/heads/main.zip"
   }
