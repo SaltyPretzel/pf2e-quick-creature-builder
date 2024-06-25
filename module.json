@@ -21,6 +21,6 @@
     ],
     "system": ["pf2e"],
     "url": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder",
-    "manifest": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder/raw/main/module.json",
-    "download": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder/archive/refs/heads/main.zip"
+    "manifest": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder/releases/latest/download/module.json",
+    "download": "https://github.com/SaltyPretzel/pf2e-quick-creature-builder/releases/latest/download/pf2e-quick-creature-builder.zip"
   }
