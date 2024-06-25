@@ -18,5 +18,6 @@
 
     "styles": [
       "styles/creature-builder.css"
-    ]
+    ],
+    "system": ["pf2e"]
   }
