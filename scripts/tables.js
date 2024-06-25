@@ -20,7 +20,7 @@ export default class StatTables {
 
     static getDefaultStats() {
         this.defaultStats = {};
-        this.defaultStats.Name = 'test name';
+        this.defaultStats.Name = 'Creature Name';
         this.defaultStats.level = 1;
         this.defaultStats.spellcasting = {
             tradition: 'none',
