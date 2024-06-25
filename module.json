@@ -1,0 +1,22 @@
+{
+    "id": "pf2e-quick-creature-builder",
+    "title": "Pathfinder 2e Quick Creature Builder",
+    "description": "A module which builds an npc in Pathfinder 2e using the GM core stat tables",
+    "authors": [
+      {
+      "name": "SaltyPretzel"
+      }
+    ],
+    "version": "1.0.0",
+    "esmodules": [
+        "scripts/main.js"
+    ],
+    "compatibility": {
+      "minimum": "12",
+      "verified": "12.327"
+    },
+
+    "styles": [
+      "styles/creature-builder.css"
+    ]
+  }

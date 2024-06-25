@@ -1,0 +1,177 @@
+{{log 'object received' this}}
+<form>
+    <ul class="creature-builder flexcol">
+        {{#each stats}}
+        {{#if this.value}}
+        <li class="flexrow">
+            <label for="{{@key}}.value">{{@key}}</label>
+            <select name="{{@key}}.value" data-dtype="String">
+                {{#each allowedValues}}
+                {{#ifEquals this ../value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        {{else}}
+        {{#ifEquals @key 'Name'}}
+        <li class="flexrow">
+            <label for="{{@key}}">Creature Name</label>
+            <input type="text" value="{{this}}" name="{{@key}}" data-dtype="String" />
+        </li>
+        {{/ifEquals}}
+        {{#ifEquals @key 'level'}}
+        <li class="flexrow">
+            <label for "{{@key}}">Creature Level</label>
+            <input type="number" value="{{this}}" min="-1" max="24" name="{{@key}}"/>
+        </li>
+        {{/ifEquals}}
+        {{/if}}
+        {{/each}}
+    </ul>
+    {{#with stats}}
+    <ul class="creature-builder flexcol">
+        <li class="flexrow">
+            <label for="spellcasting.tradition">Spellcasting</label>
+            <select name="spellcasting.tradition" data-dtype="String">
+                {{#each spellcasting.allowedValues}}
+                {{#ifEquals this ../spellcasting/tradition}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        {{#ifEquals spellcasting.tradition 'none'}}
+        {{else}}
+        <li class="flexrow">
+            <label for="spellcasting.spellProf.value">Spell Attack/DC</label>
+            <select name="spellcasting.spellProf.value" data-dtype="String">
+                {{#each spellcasting.spellProf.allowedValues}}
+                {{#ifEquals this ../spellcasting/spellProf/value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        <li class="flexrow">
+            <label for="spellcasting.style.value">Style</label>
+            <select name="spellcasting.style.value" data-dtype="String">
+                {{#each spellcasting.style.allowedValues}}
+                {{#ifEquals this ../spellcasting/style/value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        <li class="flexrow">
+            <label for="spellcasting.ability.value">Spellcasting Ability</label>
+            <select name="spellcasting.ability.value" data-dtype="String">
+                {{#each spellcasting.ability.allowedValues}}
+                {{#ifEquals this ../spellcasting/ability/value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        {{/ifEquals}}
+        <li class="flexrow">
+            Add skill
+            <button type="button" title="Add Skill" data-action="addSkill" class="flex0 creature-builder-add-button">
+                <i class="fas fa-plus"></i>
+            </button>
+        </li>
+
+        {{#each skills}}
+        {{#if trained}}
+        <li class="flexrow">
+            <select name="skills.{{@key}}.name" data-dtype="String">
+                {{#each allowedNames}}
+                {{#ifEquals this ../name}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+            <select name="skills.{{@key}}.value" data-dtype="String">
+                {{#each allowedValues}}
+                {{#ifEquals this ../value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        {{/if}}
+        {{/each}}
+
+        <li class="flexrow">
+            Add strike
+            <button type="button" title="Add Strike" data-action="addStrike" class="flex0 creature-builder-add-button">
+                <i class="fas fa-plus"></i>
+            </button>
+        </li>
+        {{#each strikes}}
+        {{#if enabled}}
+        <li class="flexrow">
+            <input type="text" name="strikes.{{@key}}.name" value="{{this.name}}" data-dtype="String"/>
+            <select name="strikes.{{@key}}.range.value" data-dtype="String">
+                {{#each range.allowedValues}}
+                {{#ifEquals this ../range.value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+            <select name="strikes.{{@key}}.type.value" data-dtype="String">
+                {{#each type.allowedValues}}
+                {{#ifEquals this ../type.value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        <li class="flexrow">
+            <label for="strikes.{{@key}}.bonus.value">Attack Bonus</label>
+            <select name="strikes.{{@key}}.bonus.value" data-dtype="String">
+                {{#each bonus.allowedValues}}
+                {{#ifEquals this ../bonus.value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+            <label for="strikes.{{@key}}.damage.value">Damage</label>
+            <select name="strikes.{{@key}}.damage.value" data-dtype="String">
+                {{#each damage.allowedValues}}
+                {{#ifEquals this ../damage.value}}
+                <option value="{{this}}" selected>{{this}}</option>
+                {{else}}
+                <option value="{{this}}">{{this}}</option>
+                {{/ifEquals}}
+                {{/each}}
+            </select>
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+    {{/with}}
+    <button type="button" title="Generate Creature" data-action="generate" class="flex0 creature-builder-generate-button">
+        Generate Creature
+    </button>
+</form>

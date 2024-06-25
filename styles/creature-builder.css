@@ -1,0 +1,18 @@
+.creature-builder {
+    padding: 0;
+    margin-top: 0;
+    gap: 1em;
+    float: left;
+    width: 50%;
+  }
+  
+  .creature-builder > li {
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .open-creature-builder-button {
+    align-self: center;
+    min-width: max-content;
+    white-space: nowrap;
+  }
