@@ -4,7 +4,7 @@ import StatTables from './tables.js'
 Hooks.on("init", function() {
   game.settings.register("pf2e-quick-creature-builder", "creatureName", {
     name: 'Creature Name',
-    hint: 'The name of the creature to be generated',
+    hint: 'object containing the stats of the creature to be built',
     scope: 'world',
     config: true,
     type: Object,
