@@ -6,7 +6,7 @@ Hooks.on("init", function() {
     name: 'Creature Name',
     hint: 'object containing the stats of the creature to be built',
     scope: 'world',
-    config: true,
+    config: false,
     type: Object,
     default: StatTables.getDefaultStats(),
     filePicker: false,
